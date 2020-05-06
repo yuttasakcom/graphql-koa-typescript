@@ -1,7 +1,8 @@
 import { Server } from './server'
 
 const bootstrap = () => {
-  new Server()
+  const server = new Server()
+  server.start()
 }
 
 bootstrap()
