@@ -4,6 +4,7 @@ export default gql`
   type Post {
     id: Int!
     title: String!
+    todo: [Todo!]!
   }
 
   type Query {
