@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.build.json"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,8 @@
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^8.0.0-alpha.1",
-    "routing-controllers": "^0.8.1"
+    "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.8.1",
+    "typedi": "^0.8.0"
   }
 }

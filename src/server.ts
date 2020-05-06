@@ -1,5 +1,12 @@
-import koa from 'koa'
-import { RoutingControllersOptions, useKoaServer } from 'routing-controllers'
+import * as koa from 'koa'
+import { Container } from 'typedi'
+import {
+  RoutingControllersOptions,
+  useKoaServer,
+  useContainer,
+} from 'routing-controllers'
+
+useContainer(Container)
 
 export class Server {
   private app: koa
@@ -8,17 +15,16 @@ export class Server {
 
   constructor() {
     this.app = new koa()
-    this.init()
-  }
-
-  private init(): void {
     const routingControllersOptions: RoutingControllersOptions = {
       defaultErrorHandler: false,
-      controllers: [`${__dirname}/controllers/**`],
+      controllers: [`${__dirname}/**/*.controller.ts`],
     }
 
     useKoaServer(this.app, routingControllersOptions)
+    this.init()
   }
+
+  private init(): void {}
 
   public start(): void {
     this.app.listen(this.port, this.host, () => {
