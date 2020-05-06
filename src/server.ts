@@ -25,12 +25,12 @@ export class Server {
 
     const resolvers = {
       Query: {
-        hello: () => 'Hello world!',
+        hello: () => 'Hello, GraphQL!',
       },
     }
 
-    const server = new ApolloServer({ typeDefs, resolvers })
-    server.applyMiddleware({ app: this.app })
+    const apolloServer = new ApolloServer({ typeDefs, resolvers })
+    apolloServer.applyMiddleware({ app: this.app })
 
     this.init()
   }
