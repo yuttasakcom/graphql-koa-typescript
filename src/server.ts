@@ -1,11 +1,12 @@
 import * as koa from 'koa'
 import { Container } from 'typedi'
-import { ApolloServer, gql } from 'apollo-server-koa'
 import {
   RoutingControllersOptions,
   useKoaServer,
   useContainer,
 } from 'routing-controllers'
+
+import graphql from './graphql'
 
 useContainer(Container)
 
@@ -16,22 +17,7 @@ export class Server {
 
   constructor() {
     this.app = new koa()
-
-    const typeDefs = gql`
-      type Query {
-        hello: String
-      }
-    `
-
-    const resolvers = {
-      Query: {
-        hello: () => 'Hello, GraphQL!',
-      },
-    }
-
-    const apolloServer = new ApolloServer({ typeDefs, resolvers })
-    apolloServer.applyMiddleware({ app: this.app })
-
+    graphql.applyMiddleware({ app: this.app })
     this.init()
   }
 
