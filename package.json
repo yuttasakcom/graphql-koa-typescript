@@ -1,0 +1,29 @@
+{
+  "name": "graphql-koa-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuttasakcom/graphql-koa-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuttasakcom/graphql-koa-typescript/issues"
+  },
+  "homepage": "https://github.com/yuttasakcom/graphql-koa-typescript#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/koa": "^2.11.3",
+    "koa": "^2.11.0"
+  }
+}
