@@ -27,7 +27,7 @@
   "dependencies": {
     "@types/koa": "^2.11.3",
     "apollo-server-koa": "^2.13.0",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
     "graphql": "^15.0.0",
     "koa": "^2.11.0",
